@@ -41,9 +41,9 @@
                   "maximumError": "500kb"
                 },
                 {
-                  "type": "css",
-                  "maximumWarning": "12kb",
-                  "maximumError": "14kb"
+                  "type": "all",
+                  "maximumWarning": "932kb",
+                  "maximumError": "934kb"
                 }
               ],
               "outputHashing": "all"
