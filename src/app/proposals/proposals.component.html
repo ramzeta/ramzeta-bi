@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuestas Innovadoras</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Propuestas Innovadoras</h1>
+</header>
+
+<section class="proposals">
+  <h2>Nuestras Propuestas en Innovación</h2>
+  <div class="proposal-container">
+    <div class="proposal">
+      <h3>Automatización Inteligente</h3>
+      <p>Implementamos IA para optimizar procesos empresariales.</p>
+      <canvas id="scene1"></canvas>
+    </div>
+    <div class="proposal">
+      <h3>Analítica Predictiva</h3>
+      <p>Utilizamos modelos de datos avanzados para predecir tendencias.</p>
+      <canvas id="scene2"></canvas>
+    </div>
+    <div class="proposal">
+      <h3>Optimización Energética</h3>
+      <p>Desarrollamos soluciones sostenibles basadas en tecnología.</p>
+      <canvas id="scene3"></canvas>
+    </div>
+  </div>
+</section>
+
+<script>
+  import {THREE} from "@angular/cdk/keycodes";
+
+  function create3DScene(canvasId) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(canvasId), alpha: true });
+    renderer.setSize(200, 200);
+    document.getElementById(canvasId).appendChild(renderer.domElement);
+
+    const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+    const material = new THREE.MeshBasicMaterial({ color: 0x0077ff, wireframe: true });
+    const knot = new THREE.Mesh(geometry, material);
+    scene.add(knot);
+
+    camera.position.z = 30;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      knot.rotation.x += 0.01;
+      knot.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  create3DScene('scene1');
+  create3DScene('scene2');
+  create3DScene('scene3');
+</script>
+</body>
+</html>
