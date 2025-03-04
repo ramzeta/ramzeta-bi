@@ -1,3 +1,28 @@
 .proposals {
-  padding: 20px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.proposal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.proposal {
+  text-align: center;
+  width: 300px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+header{
+  text-align: center;
+  margin: 20vh;
 }
